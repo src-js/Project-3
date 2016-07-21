@@ -24,6 +24,6 @@ It turns out that there’s an NYC database that indicates where and when shooti
 * As users, the Clients want there to be some browser responsiveness
 * As users, the Clients want to see a footer that indicates the site was built with love by students of General Assembly and Ramzi's school of expressionist cinematography.
 
-The requirements for the MVP are listed above in the user stories. The site will be built using React, Express, NYC Open Data’s and Google Maps’ APIs…
+The requirements for the MVP are listed above in the user stories. The site will be built using React, Express, NYC Open Data’s and Google Maps’ APIs. A stateful container will be created around google maps and contain google maps in a react component.
 
 ![The wireframe](./Diagram.png "Wireframe")
