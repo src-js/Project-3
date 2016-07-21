@@ -11,7 +11,7 @@ At this point, Ramzi's attention is captured. He knows how to create a company, 
 
 Despite all this, James just shrugs and says, "Whatevs. You guys have no idea what being a celebrity is about. You better start taking these classes, but first let's see how other students and professionals have done this.“
 
-They all stand up, cameras in hand, ready to embark on their new quest but just stand there motionless. They don’t know where any film sites are located. They need a website!
+They all stand up, cameras in hand, ready to embark on their new quest but just stand there motionless. They don’t know how to investigate where films have been shot before. They need a website!
 
 It turns out that there’s an NYC database that indicates where and when shooting permits have been acquired, and that can provide the basis for a website that would assist these users.
 
@@ -25,8 +25,5 @@ It turns out that there’s an NYC database that indicates where and when shooti
 * As users, the Clients want to see a footer that indicates the site was built with love by students of General Assembly and Ramzi's school of expressionist cinematography.
 
 The requirements for the MVP are listed above in the user stories. The site will be built using React, Express, NYC Open Data’s and Google Maps’ APIs…
-
-![The wireframe](./Diagram.png "Wireframe")
-
 
 ![The wireframe](./Diagram.png "Wireframe")
