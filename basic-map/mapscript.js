@@ -1,3 +1,5 @@
+//I followed the tutorial from the Google Geocoding API and Google Maps API, including using some sample code there as a template.
+
 let shoot1;
 let shoot2;
 let shoot3;
@@ -9,16 +11,23 @@ let latitude3;
 let longitude3;
 let map;
 
-$.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBsPh8XWJ2kNvzv2Fe1Cjz1E3Jpz0WKvPM&callback=initMap", function(){
-  console.log("Script from Google loaded.");
-});
+//nycLat and nycLong just found by doing a manual Google Maps search so we don't burn through too many API calls
+let nycLat  = 40.712784;
+let nycLong = -74.005941;
 
+
+//initMap is taken almost verbatim from the Google Maps API documentation.
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: latitude1, lng: longitude1},
+    center: {lat: nycLat, lng: nycLong},
     zoom: 8
   });
 };
+
+//The following script is created by Google as part of their Google Maps API.
+$.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBsPh8XWJ2kNvzv2Fe1Cjz1E3Jpz0WKvPM&callback=initMap", function(){
+  console.log("Script from Google loaded.");
+});
 
 function addressParse (inputAddress, inputBorough, inputZipCode) {
       let address       = inputAddress;
@@ -42,6 +51,12 @@ function latLongAddress1 (thisShoot) {
       console.log('Latitude is: ' + data.results[0].geometry.location.lat + ' and longitude is: ' + data.results[0].geometry.location.lng);
       latitude1 = data.results[0].geometry.location.lat;
       longitude1 = data.results[0].geometry.location.lng;
+      //Marker code taken from Google Maps API documentation
+      let marker1 = new google.maps.Marker({
+        position: {lat: latitude1, lng: longitude1},
+        map: map,
+        title: 'Marker1'
+      })
     }
   });
 };
@@ -55,6 +70,12 @@ function latLongAddress2 (thisShoot) {
       console.log('Latitude is: ' + data.results[0].geometry.location.lat + ' and longitude is: ' + data.results[0].geometry.location.lng);
       latitude2 = data.results[0].geometry.location.lat;
       longitude2 = data.results[0].geometry.location.lng;
+      //Marker code taken from Google Maps API documentation
+      let marker2 = new google.maps.Marker({
+        position: {lat: latitude2, lng: longitude2},
+        map: map,
+        title: 'Marker2'
+      })
     }
   });
 };
@@ -69,6 +90,12 @@ function latLongAddress3 (thisShoot){
       console.log('Latitude is: ' + data.results[0].geometry.location.lat + ' and longitude is: ' + data.results[0].geometry.location.lng);
       latitude3 = data.results[0].geometry.location.lat;
       longitude3 = data.results[0].geometry.location.lng;
+      //Marker code taken from Google Maps API documentation
+      let marker3 = new google.maps.Marker({
+        position: {lat: latitude3, lng: longitude3},
+        map: map,
+        title: 'Marker3'
+      })
     }
   });
 };
@@ -80,15 +107,14 @@ function getAddresses () {
       dataType: 'json',
       data: {'subcategoryname' : 'Feature'},
       success: function(data){
+        initMap();
         latLongAddress1(data[0]);
         latLongAddress2(data[1]);
         latLongAddress3(data[2]);
       },
-      complete: function(){
-        initMap();
-      }
-  });
+  })
 };
+
 
 
 getAddresses();
