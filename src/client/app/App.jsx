@@ -1,33 +1,31 @@
-'use strict'
-//importing libs
-import React    from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import Nav      from './Nav.jsx'
-import Footer   from './Footer.jsx'
-import GMaps    from './GMaps.jsx'
+import Map, {Marker} from 'google-maps-react'
+import google from 'google-maps-react'
+import {InfoWindow} from 'google-maps-infobox'
 
-//react component serving as our App!
-export default class App extends React.Component {
+export class App extends React.Component {
   constructor(){
-    super()
-    this.state = {
-      maps: {}
-    }
+
   }
 
-  render(){
-    return(
-      <div className="main">
-        <header>
-          <Nav />
-        </header>
-        <div className="container"><br/>
-          <GMaps />
-        </div><br/>
-        <Footer />
+  render() {
+    return (
+      <div>
+        <Map google={window.google} center: {{lat: -34.397, lng: 150.644}} zoom={14}>
+
+        <Marker onClick={this.onMarkerClick} name={'Current location'} />
+
+        <InfoWindow onClose={this.onInfoWindowClose}>
+        <div>
+          <h1>{this.state.selectedPlace.name}</h1>
+        </div>
+        </InfoWindow>
+        </Map>
       </div>
     )
   }
 }
 
 ReactDOM.render(<App/>, document.querySelector('#container'))
+
