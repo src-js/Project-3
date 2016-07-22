@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# project-3
+=======
 # Be a Film student
 
 
@@ -27,3 +30,4 @@ It turns out that there’s an NYC database that indicates where and when shooti
 The requirements for the MVP are listed above in the user stories. The site will be built using React, Express, NYC Open Data’s and Google Maps’ APIs. A stateful container will be created around google maps and contain google maps in a react component.
 
 ![The wireframe](./Diagram.png "Wireframe")
+>>>>>>> d4b53f437dd70b14f215709372ae7a0a3f011083
