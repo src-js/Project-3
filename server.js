@@ -4,7 +4,7 @@
 // Only load the dotenv if we need it.
 const env         = process.env.NODE_ENV || 'development';
 const DEV         = env==='development';
-const dotenv      = DEV && require('dotenv').config();
+// const dotenv      = DEV && require('dotenv').config();
 
 // regular stuff
 const express     = require('express');
