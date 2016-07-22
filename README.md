@@ -26,4 +26,6 @@ It turns out that there’s an NYC database that indicates where and when shooti
 
 The requirements for the MVP are listed above in the user stories. The site will be built using React, Express, NYC Open Data’s and Google Maps’ APIs. A stateful container will be created around google maps and contain google maps in a react component.
 
-![The wireframe](./Diagram.png "Wireframe")
+![The wireframe](./media/Diagram.png "Wireframe")
+
+![The ERD](./media/ERD.png "ERD")
