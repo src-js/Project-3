@@ -3,11 +3,8 @@
 const ajaxAdapter = {
   searchShoots(query){
     console.log(query)
-    return fetch('/api/?eventid=' + query)
-      .then(response => {
-        // JSON.stringify(response)
-        console.log(JSON.stringify(response))
-      })
+    return fetch('/api/?zipcode_s=' + query)
+      .then(r => r.json())
   }
 }
 

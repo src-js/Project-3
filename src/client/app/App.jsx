@@ -14,8 +14,9 @@ export class App extends React.Component {
 
   searchShoots(query){
     ajax.searchShoots(query).then(data=>{
-      // console.log(this.state.shoots)
+      // console.log('searcShoots, App.jsx', data)
       this.setState({shoots: data})
+      console.log(this.state.shoots)
     })
   }
 
