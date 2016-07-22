@@ -2,14 +2,21 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Nav from './Nav.jsx'
 import Footer from './Footer.jsx'
+import Search from './Search.jsx'
+import SearchResults from './SearchResults.jsx'
+import ajax from '../helpers/ajaxAdapter.js'
 
 export class App extends React.Component {
   constructor(){
     super()
+    this.state = {shoots: {}}
+  }
 
-    this.state = {
-      shoots: {}
-    }
+  searchShoots(query){
+    ajax.searchShoots(query).then(data=>{
+      // console.log(this.state.shoots)
+      this.setState({shoots: data})
+    })
   }
 
   render() {
@@ -18,7 +25,12 @@ export class App extends React.Component {
         <header>
           <Nav />
         </header>
-        <h1>Test Hello World!</h1>
+        <section>
+          <Search searchShoots={this.searchShoots.bind(this)}/>
+        </section>
+        <section>
+          <SearchResults shoot={this.state.shoots}/>
+        </section>
         <Footer />
       </div>
     )
