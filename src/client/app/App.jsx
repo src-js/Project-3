@@ -1,27 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Map, {Marker} from 'google-maps-react'
-import google from 'google-maps-react'
-import {InfoWindow} from 'google-maps-infobox'
+import Nav from './Nav.jsx'
+import Footer from './Footer.jsx'
 
 export class App extends React.Component {
   constructor(){
+    super()
 
+    this.state = {
+      shoots: {}
+    }
   }
 
   render() {
     return (
       <div>
-        <Map google={window.google} center: {{lat: -34.397, lng: 150.644}} zoom={14}>
-
-        <Marker onClick={this.onMarkerClick} name={'Current location'} />
-
-        <InfoWindow onClose={this.onInfoWindowClose}>
-        <div>
-          <h1>{this.state.selectedPlace.name}</h1>
-        </div>
-        </InfoWindow>
-        </Map>
+        <header>
+          <Nav />
+        </header>
+        <h1>Test Hello World!</h1>
+        <Footer />
       </div>
     )
   }
