@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Tasks',
+      title: 'src_js',
       xhtml: true,
       inject: false,
       template: require('html-webpack-template'),

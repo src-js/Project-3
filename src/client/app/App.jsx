@@ -1,29 +1,24 @@
-'use strict'
-//importing libs
-import React    from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import Nav      from './Nav.jsx'
-import Footer   from './Footer.jsx'
-import GMaps    from './GMaps.jsx'
+import Nav from './Nav.jsx'
+import Footer from './Footer.jsx'
 
-//react component serving as our App!
-export default class App extends React.Component {
+export class App extends React.Component {
   constructor(){
     super()
+
     this.state = {
-      maps: {}
+      shoots: {}
     }
   }
 
-  render(){
-    return(
-      <div className="main">
+  render() {
+    return (
+      <div>
         <header>
           <Nav />
         </header>
-        <div className="container"><br/>
-          <GMaps />
-        </div><br/>
+        <h1>Test Hello World!</h1>
         <Footer />
       </div>
     )
@@ -31,3 +26,4 @@ export default class App extends React.Component {
 }
 
 ReactDOM.render(<App/>, document.querySelector('#container'))
+
