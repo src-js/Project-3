@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/salwaes/project-3.git"
   },
-  "author": "Jason Seminara",
+  "author": "James JavaScript Johnson",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/salwaes/project-3/issues"
@@ -27,7 +27,8 @@
     "google-maps-react": "^1.0.16",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
-    "pg-promise": "^5.1.3"
+    "pg-promise": "^5.1.3",
+    "request": "^2.73.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
