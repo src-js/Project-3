@@ -10,9 +10,11 @@ export default function SearchResults(props){
        <div className="card" key={key}>
            <img src="http://countryparrots.com/parrots/chad-parrot.gif" className="card-img-left"/>
            <div className="card-block">
-             <h4 className="card-title">{props.shoot[key].borough}</h4>
-             <h4 className="card-title">{props.shoot[key].eventid}</h4>
-             <p className="card-text">{props.shoot[key].country}</p>
+             <h4 className="card-title">Borough: {props.shoot[key].borough}</h4>
+             <h6 className="card-title">Location: {props.shoot[key].parkingheld}</h6>
+             <h4 className="cart-title">{props.shoot[key].category}  shoot</h4>
+             <h6 className="card-text">{props.shoot[key].startdatetime}</h6>
+             <h6 className="card-text">to {props.shoot[key].enddatetime}</h6>
            </div>
        </div>
 
