@@ -5,6 +5,7 @@ import Footer from './Footer.jsx'
 import Search from './Search.jsx'
 import SearchResults from './SearchResults.jsx'
 import ajax from '../helpers/ajaxAdapter.js'
+// import GoogleMap from './Map.jsx'
 
 export class App extends React.Component {
   constructor(){
