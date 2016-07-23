@@ -24,6 +24,7 @@ export class App extends React.Component {
   }
 
   addLocation( newLocation ) {
+    console.log(newLocation)
     dbAjax.createLocation(newLocation).then( data => {
       console.log(data)
       this.state.list[data.visit_id] = data

@@ -4,18 +4,16 @@ import React from 'react'
 export default function SearchResults(props){
 
   const handleSubmit = event => {
-    event.preventDefault();
+    console.log(working)
 
     const newLocation = {
-      location: props.shoot[key].parkingheld,
-      borough: props.shoot[key].borough,
-      category: props.shoot[key].category,
-      subCategory: props.shoot[key].subcategoryname
+      location: props.shoot.parkingheld,
+      borough: props.shoot.borough,
+      category: props.shoot.category,
+      subCategory: props.shoot.subcategoryname
     }
-
+    console.log(newLocation)
     props.addLocation(newLocation);
-
-    event.target.reset();
   }
   return(
      <div className="list-group">
