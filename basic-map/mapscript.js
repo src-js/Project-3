@@ -8,7 +8,7 @@ let latitude3;
 let longitude3;
 let map;
 
-let myZipCode      = 11217;
+let myZipCode      = 11203;
 let tempZipArray   = [];
 let myZips         = [];
 let counter        = 0;
