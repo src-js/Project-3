@@ -15,9 +15,9 @@ const dbAjaxAdapter = {
       headers: {
         "Content-type": "application/json; charset=UTF-8"
       },
-      body: JSON.stringify()
+      body: JSON.stringify(newLocation)
     })
-    .then( r=> r.json(), console.log(r) )
+    .then( r=> r.json() )
   },
 
   deleteLocation(location){

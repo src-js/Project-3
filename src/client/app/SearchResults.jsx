@@ -4,15 +4,13 @@ import React from 'react'
 export default function SearchResults(props){
 
   const handleSubmit = event => {
-    console.log(working)
 
     const newLocation = {
-      location: props.shoot.parkingheld,
-      borough: props.shoot.borough,
-      category: props.shoot.category,
-      subCategory: props.shoot.subcategoryname
+      location: props.shoot[event.target.value].parkingheld,
+      borough: props.shoot[event.target.value].borough,
+      category: props.shoot[event.target.value].category,
+      subCategory: props.shoot[event.target.value].subcategoryname
     }
-    console.log(newLocation)
     props.addLocation(newLocation);
   }
   return(
@@ -29,7 +27,7 @@ export default function SearchResults(props){
              <h6 className="card-text" name="startDate">{props.shoot[key].startdatetime}</h6>
              <h6 className="card-text" name="endDate">to {props.shoot[key].enddatetime}</h6>
              <h6 className="card-text" name="subCategory">to {props.shoot[key].subcategoryname}</h6>
-             <button className="btn btn-primary btn-lg" type="submit" onSubmit={handleSubmit}>Add</button>
+             <button className="btn btn-primary btn-lg" value={key} onClick={handleSubmit}>Add</button>
            </div>
        </div>
 
