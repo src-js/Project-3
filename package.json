@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "Location finder of Films in NYC",
   "main": "server.js",
+  "engines": {
+    "node": "6.2.1"
+  },
   "private": true,
   "scripts": {
-    "clean": "rm -rf dist",
-    "watch": "webpack --watch",
-    "prebuild": "npm run clean -s; npm install",
-    "build": "webpack --progress --colors",
-    "start": "node server.js"
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "heroku-prebuild": "scripts/deployReact.sh",
+    "heroku-postbuild": "rm -rf db src scripts starter_resources webpack.config.js .babelrc .gitignore README.md LICENSE",
+    "start": "node server.js",
+    "watch": "webpack -d --watch"
   },
-  "repository": {
+    "repository": {
     "type": "git",
     "url": "git+https://github.com/salwaes/project-3.git"
   },
@@ -22,6 +25,8 @@
   },
   "homepage": "https://github.com/salwaes/project-3#readme",
   "dependencies": {
+    "bcrypt": "^0.8.7",
+    "jsonwebtoken": "^7.1.6",
     "body-parser": "^1.15.2",
     "ejs": "^2.4.2",
     "express": "^4.14.0",

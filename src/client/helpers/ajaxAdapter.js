@@ -3,27 +3,6 @@
 
 const ajaxAdapter = {
 
-  addToDb(query){
-    console.log('Running addToDb');
-    console.log('Query is: ' + query);
-    return fetch('/db/?borough=' + query, {
-      method: 'post'
-    })
-      // .then(r => r.json())
-  },
-
-  deleteFromDb(query){
-
-  },
-
-  updateToDb(query){
-
-  },
-
-  readFromDb(query){
-
-  },
-
   searchShoots(query){
     console.log(query)
     return fetch('/api/?zipcode_s=' + query)
