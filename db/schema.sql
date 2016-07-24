@@ -17,5 +17,5 @@ CREATE TABLE users (
   password_digest TEXT not null,
   user_created timestamp not null default now()
 );
-CREATE INDEX on users (username) ;
+CREATE INDEX on users (name) ;
 CREATE INDEX on users (email) ;
