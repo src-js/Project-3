@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 app.listen(PORT, ()=> console.log('server started on port', PORT ))
 
 // routes
-app.use('/api', api)
+app.use( '/api', api )
+app.use( '/api/users',  require('./routes/users') );
 
-app.use( express.static(path.join(__dirname, 'dist')))
+app.use( express.static(path.join(__dirname, 'dist')) )
