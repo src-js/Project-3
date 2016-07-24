@@ -9,7 +9,6 @@ const ajaxAdapter = {
       .then(r => r.json())
   }
 
-
 }
 
 export default ajaxAdapter
