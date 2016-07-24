@@ -44,6 +44,7 @@ module.exports = {
   },
 
   listUsers(req,res,next){
+    console.log('listUsers function')
     _db.any("SELECT * from users;")
       .then( users=>{
         res.users = users;
@@ -60,9 +61,9 @@ module.exports = {
     createSecure(req.body.password)
       .then( hash=>{
         _db.one(`
-          INSERT INTO users (email, password_digest)
-          VALUES ($1, $2)
-          returning *;`,[req.body.email, hash]
+          INSERT INTO users (name, email, password_digest)
+          VALUES ($1, $2, $3)
+          returning *;`,[req.body.name, req.body.email, hash]
         )
         .then( newUser=> {
           console.log(newUser)
@@ -80,3 +81,5 @@ module.exports = {
 
 
 }
+
+
