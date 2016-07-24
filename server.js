@@ -25,6 +25,8 @@ app.set('view engine', 'ejs');
 // setting out static assets directory
 app.use(express.static(path.join(__dirname,'dist')));
 
+app.use(express.static(path.join(__dirname,'public')));
+
 // set up some logging
 app.use( logger(DEV ? 'dev' : 'common'));
 
