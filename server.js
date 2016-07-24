@@ -19,8 +19,8 @@ const app           = express();
 const PORT          = process.argv[2] || process.env.port || 3000;
 
 // setting our view engine and views directory
-app.set('views', path.join(__dirname,'views'));
-app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname,'views'));
+// app.set('view engine', 'ejs');
 
 // setting out static assets directory
 app.use(express.static(path.join(__dirname,'public')));
@@ -39,3 +39,4 @@ app.use('/map', map);
 app.use('/visited', visitedRoute);
 app.use( '/api', api );
 app.use( '/api/users',  require('./routes/users') )
+
