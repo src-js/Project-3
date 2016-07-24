@@ -1,9 +1,9 @@
 'use strict'
-import React from 'react';
+import React from 'react'
 
 export default function SearchResults(props){
 
-    const handleSubmit = event => {
+  const handleSubmit = event => {
 
     const newLocation = {
       location: props.shoot[event.target.value].parkingheld,
@@ -13,10 +13,11 @@ export default function SearchResults(props){
     }
     props.addLocation(newLocation);
   }
-
   return(
      <div className="list-group">
-       {Object.keys(props.shoot).map((key,index)=>(
+       {Object.keys(props.shoot)
+     .map((key,index)=>(
+
        <div className="card" key={key}>
            <img src="http://countryparrots.com/parrots/chad-parrot.gif" className="card-img-left"/>
            <div className="card-block">
@@ -31,7 +32,7 @@ export default function SearchResults(props){
        </div>
 
      ))
-  }
+   }
      </div>
-  )
+     )
 }
