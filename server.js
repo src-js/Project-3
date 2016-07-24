@@ -12,6 +12,7 @@ const bodyParser  = require('body-parser');
 const logger      = require('morgan');
 const path        = require('path');
 const api         = require('./routes/api')
+const db          = require('./routes/db')
 
 const app         = express();
 const PORT        = process.argv[2] || process.env.port || 3000;
@@ -28,5 +29,6 @@ app.listen(PORT, ()=> console.log('server started on port', PORT ))
 
 // routes
 app.use('/api', api)
+app.use('/db', db)
 
 app.use( express.static(path.join(__dirname, 'dist')))
