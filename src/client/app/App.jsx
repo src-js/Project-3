@@ -4,9 +4,11 @@ import Nav from './Nav.jsx'
 import Footer from './Footer.jsx'
 import Search from './Search.jsx'
 import SearchResults from './SearchResults.jsx'
+import VisitedLocations from './SavedShoots.jsx'
 import ajax from '../helpers/ajaxAdapter.js'
 // import GoogleMap from './Map.jsx'
 import dbAjax from '../helpers/dbAjaxAdapter.js'
+import util from '../helpers/util.js'
 
 export class App extends React.Component {
   constructor(){
@@ -18,42 +20,48 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    dbAjax.getLocations().then( data => {
-      this.setState({list: data})
-      console.log(this.state.list)
+    dbAjax.getLocations().then( visited => {
+      this.setState({list: visited})
+      console.log('component did mount', this.state.list)
     })
   }
 
   addLocation( newLocation ) {
-    console.log(newLocation)
+    // console.log(newLocation)
     dbAjax.createLocation(newLocation).then( data => {
-      this.state.list[data.visit_id] = data
+      this.state.list[data[0].visit_id] = data[0];
       this.setState({list: this.state.list})
-      console.log(this.state.list)
+      console.log(data[0])
+      console.log('the new state is', this.state.list)
     })
   }
 
   searchShoots(query){
     ajax.searchShoots(query).then(data=>{
-      console.log('searchShoots, App.jsx', data)
+      // console.log('searchShoots, App.jsx', data)
       this.setState({shoots: data})
-      console.log(this.state.shoots)
+      // console.log(this.state.shoots)
     })
   }
 
   render() {
     return (
-      <div>
-        <header>
+      <div className="container">
+        <header className="header">
           <Nav />
         </header>
-        <section>
+        <article className="nav">
           <Search searchShoots={this.searchShoots.bind(this)}/>
-        </section>
-        <section>
+        </article>
+        <article className="col-md-6 results">
           <SearchResults shoot={this.state.shoots} addLocation={this.addLocation.bind(this)}/>
-        </section>
-        <Footer />
+        </article>
+        <article className="col-md-6 visited">
+          <VisitedLocations visited={this.state.list}/>
+        </article>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     )
   }
