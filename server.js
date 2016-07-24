@@ -11,7 +11,7 @@ const express       = require('express');
 const bodyParser    = require('body-parser');
 const logger        = require('morgan');
 const path          = require('path');
-const apiRoute      = require('./routes/api')
+const api           = require('./routes/api')
 const visitedRoute  = require('./routes/visitedLocations');
 
 const app           = express();
@@ -28,7 +28,8 @@ app.use(bodyParser.json());
 app.listen(PORT, ()=> console.log('server started on port', PORT ))
 
 // routes
-app.use('/api', apiRoute);
 app.use('/visited', visitedRoute);
+app.use( '/api', api )
+app.use( '/api/users',  require('./routes/users') );
 
-app.use( express.static(path.join(__dirname, 'dist')))
+app.use( express.static(path.join(__dirname, 'dist')) )
