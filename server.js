@@ -11,12 +11,19 @@ const express       = require('express');
 const bodyParser    = require('body-parser');
 const logger        = require('morgan');
 const path          = require('path');
-const api           = require('./routes/api')
+const map           = require('./routes/map');
 const visitedRoute  = require('./routes/visitedLocations');
+const api           = require('./routes/api');
 
 const app           = express();
 const PORT          = process.argv[2] || process.env.port || 3000;
 
+// setting our view engine and views directory
+app.set('views', path.join(__dirname,'views'));
+app.set('view engine', 'ejs');
+
+// setting out static assets directory
+app.use(express.static(path.join(__dirname,'public')));
 
 // set up some logging
 app.use( logger(DEV ? 'dev' : 'common'));
@@ -28,8 +35,7 @@ app.use(bodyParser.json());
 app.listen(PORT, ()=> console.log('server started on port', PORT ))
 
 // routes
+app.use('/map', map);
 app.use('/visited', visitedRoute);
-app.use( '/api', api )
-app.use( '/api/users',  require('./routes/users') );
-
-app.use( express.static(path.join(__dirname, 'dist')) )
+app.use( '/api', api );
+app.use( '/api/users',  require('./routes/users') )
