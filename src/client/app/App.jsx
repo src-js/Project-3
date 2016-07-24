@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import Nav from './Nav.jsx'
 import Footer from './Footer.jsx'
 import Search from './Search.jsx'
-
 import SearchResults from './SearchResults.jsx'
 import ajax from '../helpers/ajaxAdapter.js'
+// import GoogleMap from './Map.jsx'
 import dbAjax from '../helpers/dbAjaxAdapter.js'
 
 export class App extends React.Component {
