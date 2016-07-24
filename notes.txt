@@ -1,0 +1,12 @@
+{props.markers.map((marker, index) => {
+              return (
+                <Marker
+                  {...marker}
+                  onRightclick={() => props.onMarkerRightclick(index)} />
+              );
+            })}
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsPh8XWJ2kNvzv2Fe1Cjz1E3Jpz0WKvPM" ></script>
