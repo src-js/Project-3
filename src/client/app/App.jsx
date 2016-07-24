@@ -5,11 +5,31 @@ import Footer from './Footer.jsx'
 import Search from './Search.jsx'
 import SearchResults from './SearchResults.jsx'
 import ajax from '../helpers/ajaxAdapter.js'
+import dbAjax from '../helpers/dbAjaxAdapter.js'
 
 export class App extends React.Component {
   constructor(){
     super()
-    this.state = {shoots: {}}
+    this.state = {
+      shoots: {},
+      list: {}
+    }
+  }
+
+  componentDidMount() {
+    dbAjax.getLocations().then( data => {
+      this.setState({list: data})
+      console.log(this.state.list)
+    })
+  }
+
+  addLocation( newLocation ) {
+    console.log(newLocation)
+    dbAjax.createLocation(newLocation).then( data => {
+      this.state.list[data.visit_id] = data
+      this.setState({list: this.state.list})
+      console.log(this.state.list)
+    })
   }
 
   searchShoots(query){
@@ -30,7 +50,7 @@ export class App extends React.Component {
           <Search searchShoots={this.searchShoots.bind(this)}/>
         </section>
         <section>
-          <SearchResults shoot={this.state.shoots}/>
+          <SearchResults shoot={this.state.shoots} addLocation={this.addLocation.bind(this)}/>
         </section>
         <Footer />
       </div>
