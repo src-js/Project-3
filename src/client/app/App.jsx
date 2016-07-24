@@ -49,7 +49,10 @@ export class App extends React.Component {
       <div className="container">
         <header className="header">
           <Nav />
-        </header>
+        </header><br/>
+        <div className="footer">
+          <Footer />
+        </div>
         <article className="nav">
           <Search searchShoots={this.searchShoots.bind(this)}/>
         </article>
@@ -59,9 +62,6 @@ export class App extends React.Component {
         <article className="col-md-6 visited">
           <VisitedLocations visited={this.state.list}/>
         </article>
-        <div className="footer">
-          <Footer />
-        </div>
       </div>
     )
   }
