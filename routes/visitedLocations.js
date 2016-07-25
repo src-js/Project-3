@@ -10,8 +10,8 @@ router.post('/', db.addLocation, (req,res) => {
   res.json(res.rows);
 })
 
-// router.delete('/:id', db.deleteLocation, (req,res) => {
-//   res.send(req.params.id);
-// })
+router.delete('/:id', db.deleteLocation, (req,res) => {
+  res.send(req.params.id);
+})
 
 module.exports = router
