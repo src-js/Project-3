@@ -1,3 +1,4 @@
+
 # Be a Film student
 
 
@@ -15,7 +16,16 @@ They all stand up, cameras in hand, ready to embark on their new quest but just 
 
 It turns out that there’s an NYC database that indicates where and when shooting permits have been acquired, and that can provide the basis for a website that would assist these users.
 
-**User Stories**
+**User Stories (MVP)**
+
+* As users, the Clients want to be able to enter a zip code into a search bar at the top of the page and submit a search which lists shootings that have been filmed in the selected area.
+* As users, the Clients want to be to both record and see a history of the shooting sites they’ve visited. To record which sites they’ve visited, they would like to click an “add” button for shooting sites that they’ve visited. Those sites would then be populated in a column that displays the history of sites.
+* As users, the Clients want there to be some browser responsiveness
+* As users, the Clients want to see a footer that indicates the site was built with love by students of General Assembly and a great team of students.
+
+The requirements for the MVP are listed above in the user stories. The site will be built using React, Express, and NYC Open Data’s api. 
+
+**User Stories (future iterations)**
 
 * As users, the Clients want to be able to load the page and see a map of New York with icons displaying where shooting permits have been acquired in the past.
 * As users, the Clients want to be able to hover over the icons to get a modal window with more details regarding the permits, including the start and end dates, where parking was held and whether the permit was for film, television, commercial or student.
@@ -24,8 +34,9 @@ It turns out that there’s an NYC database that indicates where and when shooti
 * As users, the Clients want there to be some browser responsiveness
 * As users, the Clients want to see a footer that indicates the site was built with love by students of General Assembly and Ramzi's school of expressionist cinematography.
 
-The requirements for the MVP are listed above in the user stories. The site will be built using React, Express, NYC Open Data’s and Google Maps’ APIs. A stateful container will be created around google maps and contain google maps in a react component.
+Future requirements are listed above in the user stories. The site will ultimately be built using React, Express, NYC Open Data’s and Google Maps’ APIs. A stateful container will be created around google maps and contain google maps in a react component.
 
-![The wireframe](./media/Diagram.png "Wireframe")
+![The wireframe](./documentation/media/Diagram.png "Wireframe")
 
-![The ERD](./media/ERD.png "ERD")
+![ERD](./documentation/media/ERD.png "ERD")
+
