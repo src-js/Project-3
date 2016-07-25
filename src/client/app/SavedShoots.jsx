@@ -1,10 +1,19 @@
 'use strict'
 import React from 'react'
 
-const SavedShoots = props=>(
-  <div>
+export default function VisitedLocations(props){
+  return(
+    <div>
+    <h3>Visited Locations</h3>
+      {Object.keys(props.visited)
+             .map(key=>(
+                <div key={key}>
+                  <p>• {props.visited[key].address}</p>
+                  <p></p>
+                </div>
+              ))}
+    </div>
+  )
+}
 
-  </div>
-)
-
-export default SavedShoots;
+export default VisitedLocations;
