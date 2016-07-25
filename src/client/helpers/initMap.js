@@ -1,3 +1,5 @@
+//thanks to emma hou (@auvemma) from WDI 19 for suggesting this initMap document as well as the load.js file that she sourced from @scottjehl, Filament Group, Inc. [c]2014 (Based on http://goo.gl/REQGQ by Paul Irish)
+
 var map;
 var user_position;
 function initMap() {
