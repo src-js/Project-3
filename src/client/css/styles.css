@@ -1,10 +1,13 @@
-nav {
-  background-color: salmon;
+body {
+  padding: 48px 0;
+  text-align: center;
+  background-color: #f0e7d8;
 }
 
-body {
-  padding: 70px;
-  text-align: center;
+.navbar-default {
+  background-color: #a63a50;
+  border-color: #a1674a;
+  color: #f0e7d8;
 }
 
 .container {
@@ -16,16 +19,76 @@ body {
   text-align: center;
 }
 
-.nav {
+#article.nav {
+  background-color: green;
+  position: fixed;
   text-align: center;
 }
 
-.results {
+.nav h3 {
+  color: #a1674a;
+}
+
+.results, .visited {
   height: 800px;
   overflow-y: scroll;
+  padding-bottom: 60px;
+  margin-bottom: 100px;
+}
+
+.col-md-6.visited h3 {
+  margin-top: 0px;
 }
 
 .container {
   height: 100%;
   width: 100%;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+   /*Set the fixed height of the footer here*/
+  height: 2em;
+}
+
+.col-md-6 {
+  margin: 40px 0 96px 0;
+  padding: 0 20px;
+}
+
+.btn-lg {
+  font-size: 15px;
+  padding: 7px;
+  margin-left: 10px;
+  background-color: #a63a50;
+  border-color: #a1674a;
+  color: #f0e7d8;
+}
+
+.btn-lg:hover {
+  background-color: #a1674a;
+  border-color: #a63a50;
+  color: #ffffff;
+}
+
+.footer-copyright {
+  font-weight: bold;
+  color: #a63a50;
+}
+
+h6.card-text {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow:ellipsis;
+   text-align: center;
+   }
+h6.card-text:hover {
+   overflow:visible;
+   white-space: normal;
+   }
+
+
+
+

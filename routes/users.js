@@ -12,10 +12,10 @@ const sendError = (err,req,res,next)=>res.status(500).json(err)
 
 users.post('/',
     userService.createUser,
-    (req,res) => res.status(201).json({data: 'success'}).end()
+    (req,res) => res.status(201).json(req.body).end()
 )
 
-users.use( tokenService.validateToken )
+// users.use( tokenService.validateToken )
 
 users.get('/', userService.listUsers, (req,res)=>
   res.json( res.users.map( user=>{
