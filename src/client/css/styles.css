@@ -78,3 +78,17 @@ body {
   color: #a63a50;
 }
 
+h6.card-text {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow:ellipsis;
+   text-align: center;
+   }
+h6.card-text:hover {
+   overflow:visible;
+   white-space: normal;
+   }
+
+
+
+
