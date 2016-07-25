@@ -27,10 +27,9 @@ module.exports = {
   },
   deleteLocation(req, res, next) {
     _db.none(`
-      delete * from visited
+      delete from visited
       where id = $1
      `, [req.params.id])
-
     .then( data => {
         console.log('DELETED LOCATION SUCCESSFUL')
         res.rows = data;
