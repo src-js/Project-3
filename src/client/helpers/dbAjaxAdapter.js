@@ -20,13 +20,13 @@ const dbAjaxAdapter = {
     .then( r=> r.json() )
   },
 
-  deleteLocation(location){
-    return fetch(`/visited/{visit.id}`, {
+  deleteLocation(id){
+    return fetch(`/visited/${id}`, {
       method: 'DELETE',
       headers: {
         "Content-type": "application/json; charset=UTF-8"
       },
-      body: JSON.stringify(location)
+      body: JSON.stringify(id)
     })
     .then( r=> r.json() )
   }

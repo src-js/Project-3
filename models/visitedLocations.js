@@ -24,21 +24,21 @@ module.exports = {
         console.error('ERROR in ADDING LOCATION!', error);
         throw error;
       })
-  }
-  // deleteLocation(req, res, next) {
-  //   _db.none(`
-  //     delete * from visited
-  //     where id = $1
-  //    `, [req.params.id])
+  },
+  deleteLocation(req, res, next) {
+    _db.none(`
+      delete * from visited
+      where id = $1
+     `, [req.params.id])
 
-  //   .then( data => {
-  //       console.log('DELETED LOCATION SUCCESSFUL')
-  //       res.rows = data;
-  //       next();
-  //     })
-  //     .catch( error => {
-  //       console.error('ERROR in DELETING LOCATION!', error);
-  //       throw error;
-  //     })
-  // },
+    .then( data => {
+        console.log('DELETED LOCATION SUCCESSFUL')
+        res.rows = data;
+        next();
+      })
+      .catch( error => {
+        console.error('ERROR in DELETING LOCATION!', error);
+        throw error;
+      })
+  },
 }

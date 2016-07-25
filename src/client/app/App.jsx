@@ -36,6 +36,13 @@ export class App extends React.Component {
     })
   }
 
+  deleteLocation( id ) {
+    dbAjax.deleteLocation(id).then( data => {
+      delete this.state.data.visit_id;
+      this.setState({list: this.state.list})
+    })
+  }
+
   searchShoots(query){
     ajax.searchShoots(query).then(data=>{
       // console.log('searchShoots, App.jsx', data)
@@ -46,23 +53,30 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <container>
         <header className="header">
           <Nav />
         </header><br/>
-        <div className="footer">
-          <Footer />
+        <div className="container">
+          <div>
+            <article className="nav">
+              <Search searchShoots={this.searchShoots.bind(this)}/>
+            </article>
+            <hr className="featurette-divider"/>
+            <article className="col-md-6 results">
+              <SearchResults shoot={this.state.shoots} addLocation={this.addLocation.bind(this)}/>
+            </article>
+            <article className="col-md-6 visited">
+              <VisitedLocations visited={this.state.list} deleteLocation={this.deleteLocation.bind(this)}/>
+            </article>
+          </div>
         </div>
-        <article className="nav">
-          <Search searchShoots={this.searchShoots.bind(this)}/>
-        </article>
-        <article className="col-md-6 results">
-          <SearchResults shoot={this.state.shoots} addLocation={this.addLocation.bind(this)}/>
-        </article>
-        <article className="col-md-6 visited">
-          <VisitedLocations visited={this.state.list}/>
-        </article>
-      </div>
+        <hr className="featurette-divider"/>
+        <footer className="footer">
+          <br/>
+          <Footer />
+        </footer>
+        </container>
     )
   }
 }
